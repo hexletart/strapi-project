@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "post_items",
+  "info": {
+    "singularName": "post-item",
+    "pluralName": "post-items",
+    "displayName": "postItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "postTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "postText": {
+      "type": "blocks",
+      "required": true
+    },
+    "postImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "post_items"
+    }
+  }
+}

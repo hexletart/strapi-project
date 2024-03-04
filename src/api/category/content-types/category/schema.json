@@ -11,16 +11,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
-      "type": "string",
-      "unique": true,
-      "required": true
+    "name": {
+      "type": "string"
     },
-    "blogs": {
+    "post_items": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::blog.blog",
-      "inversedBy": "categories"
+      "relation": "oneToMany",
+      "target": "api::post-item.post-item",
+      "mappedBy": "category"
     }
   }
 }
