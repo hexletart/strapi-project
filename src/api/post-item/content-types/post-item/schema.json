@@ -23,17 +23,23 @@
     },
     "postImage": {
       "type": "media",
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
     },
-    "category": {
+    "comments": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "post_item"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
       "target": "api::category.category",
-      "inversedBy": "post_items"
+      "mappedBy": "post_items"
     }
   }
 }

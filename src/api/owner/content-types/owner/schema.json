@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "owners",
+  "info": {
+    "singularName": "owner",
+    "pluralName": "owners",
+    "displayName": "Owner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ownerTitle": {
+      "type": "string",
+      "required": true
+    },
+    "ownerText": {
+      "type": "blocks",
+      "required": true
+    },
+    "ownerImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

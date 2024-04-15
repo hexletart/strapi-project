@@ -1,0 +1,2 @@
+start:
+	npx strapi develop
