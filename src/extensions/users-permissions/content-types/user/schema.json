@@ -70,6 +70,20 @@
       "relation": "oneToMany",
       "target": "api::comment.comment",
       "mappedBy": "users_permissions_user"
+    },
+    "post_items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post-item.post-item",
+      "mappedBy": "users"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

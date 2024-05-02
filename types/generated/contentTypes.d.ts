@@ -723,6 +723,12 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::comment.comment'
     >;
+    post_items: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'api::post-item.post-item'
+    >;
+    avatar: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -828,6 +834,7 @@ export interface ApiCommentComment extends Schema.CollectionType {
     singularName: 'comment';
     pluralName: 'comments';
     displayName: 'Comment';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -919,6 +926,11 @@ export interface ApiPostItemPostItem extends Schema.CollectionType {
       'api::post-item.post-item',
       'manyToMany',
       'api::category.category'
+    >;
+    users: Attribute.Relation<
+      'api::post-item.post-item',
+      'manyToMany',
+      'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
